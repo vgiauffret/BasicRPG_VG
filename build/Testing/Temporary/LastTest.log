@@ -1,0 +1,22 @@
+Start testing: Mar 31 21:59 CEST
+----------------------------------------------------------
+1/1 Testing: testCharacters
+1/1 Test: testCharacters
+Command: "/home/giauffret/eclipse-workspace/BasicRpg/build/testCharacters"
+Directory: /home/giauffret/eclipse-workspace/BasicRpg/build
+"testCharacters" start time: Mar 31 21:59 CEST
+Output:
+----------------------------------------------------------
+Perceval just built: Perceval : 35
+Perceval after age change: Perceval : 38
+
+*** No errors detected
+<end of output>
+Test time =   0.02 sec
+----------------------------------------------------------
+Test Passed.
+"testCharacters" end time: Mar 31 21:59 CEST
+"testCharacters" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Mar 31 21:59 CEST

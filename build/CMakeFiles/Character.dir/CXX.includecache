@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+..//Character.hpp
+string
+-
+Utilities.hpp
+-
+
+..//Utilities.hpp
+iosfwd
+-
+sstream
+-
+string
+-
+
+/home/giauffret/eclipse-workspace/BasicRpg/Character.cpp
+stdexcept
+-
+cassert
+-
+sstream
+-
+string
+-
+Character.hpp
+-
+
