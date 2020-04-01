@@ -27,10 +27,10 @@ class Character: public Utilities {
       void setPhy(const int&);
       void setIntel(const int&);
       void setName(const std::string&);
-      const int& getCured(const int&);
-      const int& trainning(const int&);
-      const int& learning(const int&);
-      void gethurt(const int&, const int&);
+      void getCured(const int&);
+      void trainning(const int&);
+      void learning(const int&);
+      void getHurt(const int&, const int&);
     private:
       /**
        * Display of the object.

@@ -13,15 +13,15 @@
  * 
  * 
  */
-Character::Character() : Character("Noname", 0, 100,0,10) {
+Character::Character() : Character("Noname", 0, 0,0,0) {
 }
 
 /**
  * 
  * 
  */ 
-Character::Character (const std::string& iName, const int& iAge, const int& iVie, const int& iPhy, const int& iIntel) :
-	m_name(iName), m_age(iAge),m_vie(iVie),m_phy(iPhy),m_intel(iIntel) {
+Character::Character (const std::string& iName, const int& iAge, const int& iLife, const int& iPhy, const int& iIntel) :
+	m_name(iName), m_age(iAge),m_vie(iLife),m_phy(iPhy),m_intel(iIntel) {
 }
 
 /**
@@ -96,83 +96,115 @@ void Character::setName (const std::string& iName) {
 /**
  * Affecte la vie a un personnage
  */
-void Character::setVie (const int& iVie) {
-    m_vie = iVie;
+void Character::setVie (const int& iLife) {
+    if (iLife < 0 || iLife > 100) {
+	    std::ostringstream ostr;
+	    ostr << "The given life (" << iLife
+             << ") is invalid; it should be between 0 & 100" << std::endl;
+	    const std::string& iErrMsg = ostr.str();
+	    throw std::out_of_range (iErrMsg);
+    }
+    else
+    {
+        m_vie = iLife;
+    }     
 }
 
 /**
  * Affecte la forme physique a un personnage
  */
 void Character::setPhy (const int& iPhy) {
-    m_phy = iPhy;
+    if (iPhy < 0 || iPhy > 100) {
+	    std::ostringstream ostr;
+	    ostr << "The given physique (" << iPhy
+             << ") is invalid; it should be between 0 & 100" << std::endl;
+	    const std::string& iErrMsg = ostr.str();
+	    throw std::out_of_range (iErrMsg);
+    }
+    else
+    {
+        m_phy = iPhy;   
+    }
 }
 
 /**
  * Affecte le niveau intelllectuelle a un personnage
  */
 void Character::setIntel (const int& iIntel) {
-    m_intel = iIntel;
+    if (iIntel < 0 || iIntel > 100) {
+	    std::ostringstream ostr;
+	    ostr << "The given intellectuelle (" << iIntel
+             << ") is invalid; it should be between 0 & 100" << std::endl;
+	    const std::string& iErrMsg = ostr.str();
+	    throw std::out_of_range (iErrMsg);
+    }
+    else
+    {
+        m_intel = iIntel; 
+    }
 }
 
 /**
  * Permet de recupérer toutes les infos d'un personnage
- * 
  * @return Une chaine de charactere qui correspond au nom du personnage suivie de son age et de toutes ses caractéristique
  */
 std::string Character::describe() const {
 	std::ostringstream ostr;
-	ostr << m_name << " : " << m_age << " Caractéristique : " << 
-	"*Vie : " << m_vie << "*Pysique : " << m_phy << "*Intellectuelle : " << m_intel;
+	ostr << m_name << " : " << m_age << " Vie : " << m_vie 
+    << " Pysique : " << m_phy << " Intellectuelle : " << m_intel;
 	return ostr.str();
 }
 
 /**
  * Le perso se fait soigner et gagne des points de vie
- * @param iVie : Entier qui represente la vie du personnage
- * @return Entier qui représente la vie du personnage apres les soins
+ * @param iLife : Entier qui represente la vie du personnage
  */
-const int& Character::getCured (const int& iVie) {
-    m_vie = iVie + 20;
-	return m_vie;
+void Character::getCured (const int& iLife) {
+    m_vie = iLife + 20;
+    if (m_vie>100)
+    {
+        m_vie=100;
+    }
 }
 
 /**
  * Le perso gagne en aptitude physique
  * @param iPhy : Entier qui represente l'aptitude physique du personnage
- * @return Entier qui représente l'aptitude physique du personnage apres l'entrainement
  */
-const int& Character::getCured (const int& iPhy) {
+void Character::trainning(const int& iPhy) {
     m_phy = iPhy + 10;
-	return m_phy;
+    if (m_phy>100)
+    {
+        m_phy=100;
+    }
 }
 
 /**
  * Le perso gagne en aptitude intellectuelle
  * @param iIntel : Entier qui represente l'aptitude intellectuelle du personnage
- * @return Entier qui représente l'aptitude intellectuelle du personnage apres l'entrainement
  */
-const int& Character::learning (const int& iIntel) {
+void Character::learning (const int& iIntel) {
     m_intel = iIntel + 10;
-	return m_intel;
-}
-
-/**
- * Le perso gagne en aptitude intellectuelle
- * @param iIntel : Entier qui represente l'aptitude intellectuelle du personnage
- * @return Entier qui représente l'aptitude intellectuelle du personnage apres l'entrainement
- */
-const int& Character::learning (const int& iIntel) {
-    m_intel = iIntel + 10;
-	return m_intel;
+    if (m_intel>100)
+    {
+        m_intel=100;
+    }
 }
 
 /**
  * Le perso perd des points de vie et de l’aptitude physique
- * @param iVie : Entier qui represente la vie du personnage
+ * @param iLife : Entier qui represente la vie du personnage
  * @param iPhy : Entier qui represente l'aptitude physique du personnage
- * @return 
  */
-void Character::gethurt (const int& iVie, const int& iPhy) {
-    m_vie = iVie - 10;
+void Character::getHurt (const int& iLife, const int& iPhy) {
+    m_vie = iLife - 10;
 	m_phy = iPhy - 10;
+    if(m_vie<0)
+    {
+        m_vie=0;
+    }
+    if(m_phy<0)
+    {
+        m_phy=0;
+    }
 }
