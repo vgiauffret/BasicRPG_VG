@@ -10,23 +10,20 @@
 #include <Character.hpp>
 
 /**
- * 
- * 
+ * Constructeur du personnage par default
  */
 Character::Character() : Character("Noname", 0, 0,0,0) {
 }
 
 /**
- * 
- * 
+ * Constructeur du personnage avec les paramètres
  */ 
 Character::Character (const std::string& iName, const int& iAge, const int& iLife, const int& iPhy, const int& iIntel) :
 	m_name(iName), m_age(iAge),m_vie(iLife),m_phy(iPhy),m_intel(iIntel) {
 }
 
 /**
- * 
- * 
+ * Destructeur du personnage
  */
 Character::~Character() {
 }
