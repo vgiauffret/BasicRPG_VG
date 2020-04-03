@@ -57,7 +57,7 @@ BOOST_AUTO_TEST_CASE (characters1) {
   // Perso 1
   Character* p1_ptr = new Character ("Perceval", 35, 100, 50, 50);
   assert (p1_ptr != nullptr);
-  Warrior* p2_ptr = new Warrior("Nico",25,100,100,100);
+  Warrior* p2_ptr = new Warrior("Nico",25,100,50,100);
   assert (p2_ptr != nullptr);
   std::cout << "Perso just built: " << *p1_ptr << std::endl;
   std::cout << "Warrior just built: " << *p2_ptr << std::endl;
@@ -67,22 +67,31 @@ BOOST_AUTO_TEST_CASE (characters1) {
   // Amend Perso 1
   assert (p1_ptr!=nullptr);
   assert (p2_ptr!=nullptr);
+  //Affecte l'age du personnage a 38
   p1_ptr->setAge(38);
+  //Affiche toute les infos du personnages
   std::cout << "Perso after age change age: " << *p1_ptr << std::endl;
+  //Blessure du personnage
   p1_ptr->getHurt(p1_ptr->getVie(),p1_ptr->getPhy());
   std::cout << "Perso after age change vie et physique: " << *p1_ptr << std::endl;
+  //Entrainement du personnage
   p1_ptr->trainning(p1_ptr->getPhy());
   std::cout << "Perso after age change physique: " << *p1_ptr << std::endl;
+  //Apprentissage du personnage
   p1_ptr->learning(p1_ptr->getIntel());
   std::cout << "Perso after age change intellectuelle: " << *p1_ptr << std::endl;
+  //Soins sur le personnage
   p1_ptr->getCured(p1_ptr->getVie());
   std::cout << "Perso after age change vie: " << *p1_ptr << std::endl;
+  //Affecte un nom au personnage
   p1_ptr->setName("Vincent");
   std::cout << "Perso after age change name: " << *p1_ptr << std::endl;
-  p1_ptr->setVie(200);
+  //Génere une erreur
+  //p1_ptr->setVie(200);
   std::cout << "Perso after age change vie: " << *p1_ptr << std::endl;
-  //p2_ptr->trainning(p2_ptr->getPhy());
-  //std::cout << "Warrior after age change physique: " << *p2_ptr << std::endl;
+  //Entrainement d'un guerrier
+  p2_ptr->trainning(p2_ptr->getPhy());
+  std::cout << "Warrior after age change physique: " << *p2_ptr << std::endl;
 
 
   BOOST_CHECK_MESSAGE (p1_ptr->getAge() == 38,
@@ -90,7 +99,7 @@ BOOST_AUTO_TEST_CASE (characters1) {
 
   // Cleaning
   delete p1_ptr; p1_ptr = nullptr;
-  //delete p2_ptr; p2_ptr = nullptr;
+  delete p2_ptr; p2_ptr = nullptr;
 }
 
 // End the test suite

@@ -16,6 +16,8 @@ class Magiciens: public Character {
       Magiciens ();
       Magiciens (const std::string& iName,const int& iAge, const int& iVie,const int& iPhy,const int& iIntel);
       virtual ~Magiciens();
+      void learning(const int&);
+
       
     private:
       /**

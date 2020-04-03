@@ -16,6 +16,8 @@ class Paysans: public Character {
       Paysans ();
       Paysans (const std::string& iName,const int& iAge, const int& iVie,const int& iPhy,const int& iIntel);
       virtual ~Paysans();
+      void getCured(const int&);
+
       
     private:
       /**

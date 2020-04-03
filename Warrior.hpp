@@ -14,9 +14,10 @@ class Warrior: public Character {
         
     public:
       Warrior ();
-      Warrior (const std::string& iName,const int& iAge, const int& iVie,
-      const int& iPhy,const int& iIntel);
+      Warrior (const std::string& iName,const int& iAge, const int& iVie, const int& iPhy,const int& iIntel);
       virtual ~Warrior();
+      void trainning(const int&);
+
       
     private:
      

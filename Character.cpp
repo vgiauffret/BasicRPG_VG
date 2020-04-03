@@ -157,7 +157,7 @@ std::string Character::describe() const {
  * @param iLife : Entier qui represente la vie du personnage
  */
 void Character::getCured (const int& iLife) {
-    m_vie = iLife + 20;
+    m_vie = iLife + 10;
     if (m_vie>100)
     {
         m_vie=100;

@@ -12,11 +12,11 @@
 
 class Weapon: public Utilities {
     protected:
-        int m_age,m_vie,m_phy,m_intel;
+        int m_age,m_degat,m_type,m_freq;
         std::string m_name;
     public:
       Weapon ();
-      Weapon (const std::string& iName,const int& iAge, const int& iVie,const int& iPhy,const int& iIntel);
+      Weapon (const std::string& iName,const int& iDegat, const int& iType,const int& iFreq);
       virtual ~Weapon();
       
     private:
