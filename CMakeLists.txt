@@ -6,7 +6,7 @@ link_directories(/usr/local/lib)
 find_package(Boost COMPONENTS system filesystem REQUIRED)
 # C++ library
 add_library (Character SHARED Character.cpp Warrior.cpp Warrior.hpp Magiciens.cpp Magiciens.hpp Paysans.cpp Paysans.hpp)
-add_library (Weapon SHARED Weapon.cpp)
+add_library (Weapon SHARED Weapon.cpp Fusil.cpp Fusil.hpp Hache.cpp Hache.hpp Sort.cpp Sort.hpp)
 # Unitary Test
 enable_testing()
 # Register the test binary target
