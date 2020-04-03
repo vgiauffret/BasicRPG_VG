@@ -23,6 +23,5 @@ class Paysans: public Character {
        *
        * @return std::string Dump of the object.
        */
-      virtual std::string describe() const;
 };
 #endif // __CHARACTER_HPP

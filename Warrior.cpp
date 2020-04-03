@@ -12,14 +12,15 @@
 /**
  * Constructeur du personnage Warrior par default
  */
-Warrior::Warrior() : Warrior("Noname", 0, 0,0,0) {
+Warrior::Warrior() : Warrior("Noname", 0, 0, 0, 0) {
 }
 
 /**
  * Constructeur du personnage Warrior avec les paramètres
  */ 
-Warrior::Warrior (const std::string& iName, const int& iAge, const int& iLife, const int& iPhy, const int& iIntel) :
-	Character() {
+Warrior::Warrior (const std::string& iName, const int& iAge, 
+const int& iLife, const int& iPhy, const int& iIntel) : 
+Character(iName,iAge,iLife,iPhy,iIntel) {
 }
 
 /**
@@ -27,6 +28,4 @@ Warrior::Warrior (const std::string& iName, const int& iAge, const int& iLife, c
  */
 Warrior::~Warrior() {
 }
-
-
 

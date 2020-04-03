@@ -28,5 +28,15 @@ Magiciens::Magiciens (const std::string& iName, const int& iAge, const int& iLif
 Magiciens::~Magiciens() {
 }
 
-
-
+/**
+ * Le Magicien gagne en aptitude intellectuelle
+ * @param iIntel : Entier qui represente l'aptitude intellectuelle du Magicien
+ */
+/*
+void Character::learning (const int& iIntel) {
+    m_intel = iIntel + 20;
+    if (m_intel>100)
+    {
+        m_intel=100;
+    }
+}*/

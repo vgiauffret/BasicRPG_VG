@@ -18,6 +18,7 @@
 #include <boost/test/unit_test.hpp>
 // Characters
 #include <Character.hpp>
+#include <Warrior.hpp>
 
 namespace boost_utf = boost::unit_test;
 
@@ -56,12 +57,16 @@ BOOST_AUTO_TEST_CASE (characters1) {
   // Perso 1
   Character* p1_ptr = new Character ("Perceval", 35, 100, 50, 50);
   assert (p1_ptr != nullptr);
-  std::cout << "Perceval just built: " << *p1_ptr << std::endl;
+  Warrior* p2_ptr = new Warrior("Nico",25,100,100,100);
+  assert (p2_ptr != nullptr);
+  std::cout << "Perso just built: " << *p1_ptr << std::endl;
+  std::cout << "Warrior just built: " << *p2_ptr << std::endl;
   BOOST_CHECK_MESSAGE (p1_ptr->getAge() == 35,
                        "The age of this character should be 35");
 
   // Amend Perso 1
   assert (p1_ptr!=nullptr);
+  assert (p2_ptr!=nullptr);
   p1_ptr->setAge(38);
   std::cout << "Perso after age change age: " << *p1_ptr << std::endl;
   p1_ptr->getHurt(p1_ptr->getVie(),p1_ptr->getPhy());
@@ -76,6 +81,8 @@ BOOST_AUTO_TEST_CASE (characters1) {
   std::cout << "Perso after age change name: " << *p1_ptr << std::endl;
   p1_ptr->setVie(200);
   std::cout << "Perso after age change vie: " << *p1_ptr << std::endl;
+  //p2_ptr->trainning(p2_ptr->getPhy());
+  //std::cout << "Warrior after age change physique: " << *p2_ptr << std::endl;
 
 
   BOOST_CHECK_MESSAGE (p1_ptr->getAge() == 38,
@@ -83,6 +90,7 @@ BOOST_AUTO_TEST_CASE (characters1) {
 
   // Cleaning
   delete p1_ptr; p1_ptr = nullptr;
+  //delete p2_ptr; p2_ptr = nullptr;
 }
 
 // End the test suite
