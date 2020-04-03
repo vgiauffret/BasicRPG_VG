@@ -12,14 +12,14 @@
 /**
  * Constructeur du Sort par default
  */
-Sort::Sort() : Sort("Noname", 0, 0, 0) {
+Sort::Sort() : Sort("Sort", "Magie", 0) {
 }
 
 /**
  * Constructeur du Sort avec les paramètres
  */ 
-Sort::Sort (const std::string& iName, const int& iDegat, const int& iType, const int& iFreq) : 
-Weapon(iName,iDegat,iType,iFreq) {
+Sort::Sort (const std::string& iName, const std::string& iType, const int& iFreq) : 
+Weapon(iName,iType,iFreq) {
 }
 
 /**

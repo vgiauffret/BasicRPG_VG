@@ -14,7 +14,7 @@ class Sort: public Weapon {
         
     public:
       Sort ();
-      Sort (const std::string& iName,const int& iDegat, const int& iType, const int& iFreq);
+      Sort (const std::string& iName, const std::string& iType, const int& iFreq);
       virtual ~Sort();
       void bouledefeu();
       void recharger();

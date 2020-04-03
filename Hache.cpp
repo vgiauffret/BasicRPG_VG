@@ -12,14 +12,14 @@
 /**
  * Constructeur du Hache par default
  */
-Hache::Hache() : Hache("Noname", 0, 0, 0) {
+Hache::Hache() : Hache("Hache", "Poing", 0) {
 }
 
 /**
  * Constructeur du Hache avec les paramètres
  */ 
-Hache::Hache (const std::string& iName, const int& iDegat, const int& iType, const int& iFreq) : 
-Weapon(iName,iDegat,iType,iFreq) {
+Hache::Hache (const std::string& iName, const std::string& iType, const int& iFreq) : 
+Weapon(iName,iType,iFreq) {
 }
 
 /**

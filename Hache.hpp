@@ -14,7 +14,7 @@ class Hache: public Weapon {
         
     public:
       Hache ();
-      Hache (const std::string& iName,const int& iDegat, const int& iType, const int& iFreq);
+      Hache (const std::string& iName,const std::string& iType, const int& iFreq);
       virtual ~Hache();
       void coup();
       void lancer();

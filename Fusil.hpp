@@ -14,7 +14,7 @@ class Fusil: public Weapon {
         
     public:
       Fusil ();
-      Fusil (const std::string& iName,const int& iDegat, const int& iType, const int& iFreq);
+      Fusil (const std::string& iName,const std::string& iType, const int& iFreq);
       virtual ~Fusil();
       void coupDeCross();
       void recharger();

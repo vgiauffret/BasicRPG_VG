@@ -12,14 +12,14 @@
 /**
  * Constructeur du Fusil par default
  */
-Fusil::Fusil() : Fusil("Noname", 0, 0, 0) {
+Fusil::Fusil() : Fusil("Fusil", "Feu", 0) {
 }
 
 /**
  * Constructeur du Fusil avec les paramètres
  */ 
-Fusil::Fusil (const std::string& iName, const int& iDegat, const int& iType, const int& iFreq) : 
-Weapon(iName,iDegat,iType,iFreq) {
+Fusil::Fusil (const std::string& iName, const std::string& iType, const int& iFreq) : 
+Weapon(iName,iType,iFreq) {
 }
 
 /**
